@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>融汇金服</title>
+
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/static.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/datetimepicker.css">
+    <link rel="stylesheet" href="css/su.css">
+
+
+    <!---->    <script src="lib/jquery.min.js" type="text/javascript"></script>
+
+
+    <script src="lib/bootstrap.min.js" type="text/javascript"></script>
+   
+
+
+    <!-- -->    <script src="lib/angular/angular.js" type="text/javascript"></script>
+
+    <script src="lib/angular/angular-ui-router.min.js" type="text/javascript"></script>
+
+    <script src="lib/angular/angular-animate.js" type="text/javascript"></script>
+
+    <!----><script src="module/app.js" type="text/javascript"></script>
+
+
+    <!--controller-->
+    <script src="module/controllers/public/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="module/controllers/public/jquery.flexslider-min.js" type="text/javascript"></script>
+    <script src="module/controllers/public/jquery.SuperSlide2.js" type="text/javascript"></script>
+    <script src="module/controllers/menu.js" type="text/javascript"></script>
+    <script src="module/controllers/loading.js" type="text/javascript"></script>
+    <script src="module/controllers/indexTab.js" type="text/javascript"></script>
+    <script src="module/controllers/public/tm.pagination.js" type="text/javascript"></script>
+     <script src="lib/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="module/controllers/assets/assetsCtrl.js" type="text/javascript"></script>
+
+    <!-- 分页插件 -->
+    <script type="text/javascript" src="module/controllers/public/kkpager.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/kkpager.css"/>
+    <!--controller-->
+
+</head>
+<body ng-app="app">
+<div class="top_top">
+    <div class="container">
+        <div class="top_cn_left"><span>服务热线&nbsp;&nbsp;800-800-8888</span></div>
+        <div class="top_cn_right">
+            <ul>
+                <li>关注融汇</li>
+                <li>网站导航</li>
+                <li>帮助中心</li>
+                <li><a ui-sref="userHome.userMain">用户中心</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="top-header"  ng-controller="menuCtrl">
+    <div class="container top-header-us">
+        <div class="logo hidden-xs" ui-sref="index"></div>
+        <div class="head-left">
+            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div id="navbar" class="collapse navbar-collapse">
+
+                <ul class="nav navbar-nav">
+                    <li class="y_on"><a ui-sref="index">首页</a></li>
+                    <li><a ui-sref="product">理财产品</a></li>
+                    <li><a ui-sref="assets">资产交易</a></li>
+                    <li><a ui-sref="MIS">融资交易</a></li>
+                </ul>
+                <!--<ul class="nav navbar-nav">
+                    <li ng-repeat="item in items" ng-class="{true: 'on'}[item==selectedItem]" ng-click="select(item)">{{  }}</li>
+                </ul>-->
+
+            </div>
+        </div>
+        <div class="user">
+            <a class="userPic">登录</a> |
+            <a href="login.html">注册</a>
+            <div class="bor-r"></div>
+        </div>
+        <div class="search">
+
+            <i class="iconfont icon-sousuo"></i>
+
+            <input type="text" placeholder="请输入您要查找的内容" class="search_input" id="inputtext" value="">
+
+            <button title="搜索" id="search_btn">搜索</button>
+        </div>
+
+    </div>
+</div>
+
+<div class="view-slide-in" data-ui-view=""></div>
+
+<div class="footer">
+    	<div class="footer_cnt">
+        		<div class="footer_cnt_left">
+            		<div class="logo_bg">
+                         <div class="logo"></div>
+                       </div>
+            			<div class="contact">
+                			<p style="font-size: 16px">8888-8888-88</p>
+                			<p>服务时间&nbsp;&nbsp;&nbsp;9:00-18:00</p>
+                			<p>留言信箱&nbsp;&nbsp;&nbsp;xxx@xx.com</p>
+                        </div>
+            		</div>
+        		<div class="footer_cnt_centre margin_left">
+            		    <h6>关于融汇</h6>
+            		    <p><a>公司介绍</a></p>
+            		    <p><a>资讯平台</a></p>
+            		    <p><a>大事记</a></p>
+            		    <p><a>联系我们</a></p>
+            	    </div>
+        		<div class="footer_cnt_centre">
+            		    <h6>平台资讯</h6>
+            		    <p><a>新闻动态</a></p>
+            		    <p><a>投资理财</a></p>
+            		    <p><a>政策法规</a></p>
+            	    </div>
+        		<div class="footer_cnt_centre">
+            		    <h6>安全保障</h6>
+            		    <p><a>平台安全</a></p>
+            		    <p><a>数据与信息安全</a></p>
+            		    <p><a>隐私保密</a></p>
+            		    <p><a>风险评级</a></p>
+            	    </div>
+        		<div class="footer_cnt_right">
+            		    <img src="img/wechat.png">
+            		    <p>扫二维码加关注</p>
+            	    </div>
+        		<div class="footer_cnt_right" style="padding-left: 36px">
+            		    <div class="code"></div>
+            	    </div>
+        </div>
+    		<div class="footer_cnt_bottom">
+        		    <div class="content">
+            		           版权所有&copy;XXXXXXXXX有限公司&nbsp;&nbsp;&nbsp; Copyright&nbsp;XXXXXXXXXXXXXXXX&nbsp;Co.Ltd.All&nbsp;Rights&nbsp;Reserved
+            		    </div>
+                    </div>
+    </div>
+<script>
+    //    loading
+    //    $('body').show();
+    //    $('.version').text(NProgress.version);
+    //        菜单变
+    $(".navbar-collapse .navbar-nav li").click(function(){
+        $(this).addClass("y_on");
+        $(this).siblings("li").removeClass("y_on");
+    })
+</script>
+</body>
+    <script src="module/controllers/userHome/userHomeCtrl.js"></script>
+    <script src="module/controllers/userHome/userPropertyCtrl.js"></script>
+</html>

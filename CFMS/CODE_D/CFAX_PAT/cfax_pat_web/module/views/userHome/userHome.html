@@ -1,0 +1,23 @@
+<div ng-controller="userHomeCtrl">
+    <div class="user-left-side">
+        <ul>
+            <li ng-repeat="item in left_side" ng-class="{'left-side-selected':current_url == item.url}" ng-click="$parent.current_url = item.url">
+                <a ui-sref="{{item.url}}">{{item.name}}</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="user-right-side">
+        <div class="user-info-tip">
+            公告：周一至周日，9:30、_13:30、16:30、19:30准时发布
+            <a ui-sref="#">消息中心&nbsp;&nbsp;></a>
+        </div>
+        <div class="user-container">
+            <div class="user-title"><span>首页</span>&nbsp;>&nbsp;个人中心</div>
+            <div ui-view></div>
+        </div>
+        
+    </div>
+    <div class="clearfix"></div>
+</div>
+
