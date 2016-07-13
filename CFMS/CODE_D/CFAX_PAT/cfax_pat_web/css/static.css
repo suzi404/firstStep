@@ -16,18 +16,19 @@ a:hover{cursor: pointer;}
 .container{ width:1200px; padding-left:0px; padding-right:0px; height: 100%;}
 .col-xs-12{padding-left:0;padding-right:0;margin: 0px;}
 
-/*=========================head==============================*/
-.top_top{background-color: #222;height: 30px;}
+/*=========================header==============================*/
+.nav_index{position: fixed;z-index: 9999;width: 100%;border: 0px;}
+.top_top{background-color: #222;height: 30px;border: 0px;}
 .top_top .top_cn_left{float: left;vertical-align: middle;}
 .top_top .top_cn_left span{font-size: 14px;color: #fff;line-height: 30px;}
 .top_top .top_cn_right{float: right;}
 .top_top .top_cn_right ul li{display: inline-block;color: #fff;font-size: 14px;margin-right: 10px;line-height: 30px;}
-.top-header{ width:100%; min-height:100%; padding-left:15px; padding-right:15px; background:#fff;
-    box-shadow:0 3px 0 #d9d9d9;
-    -webkit-box-shadow:0 3px 3px #d9d9d9;
-    -moz-box-shadow:0 3px 3px #d9d9d9;
-    -o-box-shadow:0 3px 3px #d9d9d9;
-    -ms-box-shadow:0 3px 3px #d9d9d9;
+.top-header{ width:100%; min-height:100%; padding-left:15px; padding-right:15px; background:#fff;border: 0px;
+    box-shadow:0 1px 0 #d9d9d9;
+    -webkit-box-shadow:0 1px 1px #d9d9d9;
+    -moz-box-shadow:0 1px 1px #d9d9d9;
+    -o-box-shadow:0 1px 1px #d9d9d9;
+    -ms-box-shadow:0 1px 1px #d9d9d9;
 
 }
 .top-header-us{ padding-top:20px; padding-bottom:20px; position:relative;height: 80px;}
@@ -45,6 +46,9 @@ a:hover{cursor: pointer;}
 .top-header .user{ float:right; min-width:110px; background:#fff; position:relative; z-index:15;line-height: 40px;}
 .top-header .user a{color: #666;font-size: 14px;padding: 0px 6px;}
 .user .userPic{ margin-left: 10px;}
+.user_in{line-height: 40px;padding: 0px 0px 0px 20px;float:right; min-width:110px; position:relative; z-index:15;}
+.user_in .userImg{display: inline-block;width: 30px;height: 30px;margin-top: 8px;border: 0px;border-radius: 15px;background: url("../img/wechat.png") no-repeat center;cursor: pointer;}
+.user_in span{float: right;cursor: pointer;font-size: 16px;color: #333;padding: 0px 0px 0px 10px;line-height: 40px;}
 /*.user .bor-r:before{content:"";width:1px;height:25px;background:#e6e6e6;position:absolute;top:8px;left:0px;}*/
 .search .select{ padding-left:10px; color:#999; height: 25px; border-left: 1px solid #e6e6e6; /*border:1px solid transparent;*/ border:1px solid transparent; background:transparent;}
 .select span{ padding-right:10px; border-right:1px solid #eee;}
@@ -53,6 +57,13 @@ a:hover{cursor: pointer;}
 .search .search_input{ width:180px;height: 30px; font-size:14px; color:#d2d2d2;border: 0px;background-color: #f3f3f3;margin: 0px;float: left;}
 #search_btn{ width:46px;height: 30px; display:inline-block; z-index:15; background:#ed563a;color: #fff;font-size: 14px;border: 0px;margin: 0px;border-top-right-radius: 3px;border-bottom-right-radius: 3px;}
 .dropdown-menu{ top:25px;}
+
+/*=========================第二header（会员中心头部）==============================*/
+.header_hui_right{display: inline-block;float: right;padding: 10px 0px 0px 0px;}
+.header_hui_right .header_hui_title{float: left;color: #333;font-size: 16px;height: 30px;border-right: 1px solid #333;line-height: 30px;padding: 0px 20px;cursor: pointer;}
+.user_hui{line-height: 30px;padding: 0px 20px;float:right; min-width:110px; background:#fff; position:relative; z-index:15;}
+.user_hui .userImg{display: inline-block;width: 30px;height: 30px;border: 0px;border-radius: 15px;background: url("../img/wechat.png") no-repeat center;cursor: pointer;}
+.user_hui span{float: right;cursor: pointer;font-size: 16px;color: #333;padding: 0px 6px;line-height: 30px;}
 
 /*add 2*/
 
@@ -72,6 +83,7 @@ a:hover{cursor: pointer;}
     .hide_xs{
         display:none!important;
     }
+    .top_cn_right{display: none;}
 }
 @media (min-width: 768px) {
     .details .details_box .news li{
@@ -86,6 +98,7 @@ a:hover{cursor: pointer;}
 }
 .navbar-nav>li>a{
     color:#333;
+    font-size: 16px;
 }
 .navbar-nav>li>a:hover,.navbar-nav>li>.nav-on{
     color:#337ab7;
@@ -142,13 +155,13 @@ a:hover{cursor: pointer;}
 
 .join{float:left;width:100%;min-height:300px;border:0px solid red;background-color: #fff;border-bottom: 0px solid #eeeeee;padding-bottom: 30px;}
 /*.join .join_project{height:205px;width:1200px;border:0px solid red;margin: 0 auto;margin-top: 20px;}*/
-.join .join_project ul li{cursor:pointer;display:inline-block; width: 240px; min-height: 126px;  border:0px solid #dddddd;_margin-left: 55px;vertical-align: top;}
-.join .join_project ul li.one{background:url(../img/join1.png) center no-repeat;_background:url(../img/join1-8.png) center no-repeat;_background-position:20px 10px; }
-.join .join_project ul li.two{background:url(../img/join2.png) center no-repeat;_background:url(../img/join2-8.png) center no-repeat;_background-position:20px 10px;}
-.join .join_project ul li.three{background:url(../img/join3.png) center no-repeat;_background:url(../img/join3-8.png) center no-repeat;_background-position:20px 10px;}
-.join .join_project ul li.free{background:url(../img/join4.png) center no-repeat;_background:url(../img/join4-8.png) center no-repeat;_background-position:20px 10px;}
+.join .join_project ul li{display:inline-block; width: 240px; min-height: 126px;  border:0px solid #dddddd;_margin-left: 55px;vertical-align: top;}
+.join .join_project ul li.one{background:url(../img/join1.png) center no-repeat;background-position-y: 28px;_background:url(../img/join1-8.png) center no-repeat;_background-position:20px 10px; }
+.join .join_project ul li.two{background:url(../img/join2.png) center no-repeat;background-position-y: 28px;_background:url(../img/join2-8.png) center no-repeat;_background-position:20px 10px;}
+.join .join_project ul li.three{background:url(../img/join3.png) center no-repeat;background-position-y: 28px;_background:url(../img/join3-8.png) center no-repeat;_background-position:20px 10px;}
+.join .join_project ul li.free{background:url(../img/join4.png) center no-repeat;background-position-y: 28px;_background:url(../img/join4-8.png) center no-repeat;_background-position:20px 10px;}
 .join .join_project ul li h5{font: 12px/24px "Microsoft YaHei"; color: #999999;margin-top: 10px;}
-.join .join_project ul li h4{margin-top: 135px; font: 20px/24px "Microsoft YaHei"; color: #574c45;_margin-top: 135px;}
+.join .join_project ul li h4{margin-top: 150px; font: 20px/24px "Microsoft YaHei"; color: #574c45;_margin-top: 135px;}
 .join .join_button{width:152px;height:50px;border:0px solid red;margin:0 auto;margin-top: 62px;}
 .join .join_button a.invest{ height: 50px;width:152px;font: 18px/50px "Microsoft YaHei"; color: #fff; background-color: #ffa10d; border-radius: 4px;}
 
@@ -202,7 +215,7 @@ a:hover{cursor: pointer;}
 .details_box .nav-tabs{border-bottom: 3px solid #dadada;}
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{border: 0px;border-bottom: 3px solid #ed563a;background-color: #f2f2f2;}
 .details_box .dynamic{margin-top: 10px;}
-.details_box .dynamic .box_title{border-bottom: 1px solid #ddd;height: 46px;line-height: 46px;}
+.details_box .dynamic .box_title{border-bottom: 1px solid #ddd;min-height: 46px;line-height: 46px;}
 .details_box .dynamic ul{min-height: 74px;border-bottom: 1px dashed #ddd;padding: 0px 10px;}
 .details_box .dynamic ul li{display: inline-block;font-size: 14px;color: #333;width: 192px\9;}
 .details_box .dynamic ul li:nth-child(1){width: 28%;text-align: left;}

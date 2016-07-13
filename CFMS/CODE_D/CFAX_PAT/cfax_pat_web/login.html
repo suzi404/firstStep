@@ -10,13 +10,15 @@
     <script src="module/controllers/login/loginCtrl.js"></script>
 </head>
 <body>
-<div class="container top-head clearfix">
-    <div class="logo clearfix"><!--<img src="logo.png"/><div class="logo-name"><em>融汇金服</em>RONGHUI Financial Service</div>--></div>
-    <div class="head-right">
-        汇融金服首页
+<nav class="nav">
+    <div class="container top-head clearfix">
+        <a href="index.html"><div class="logo clearfix"></div></a>
+        <div class="head-right">
+            <a href="index.html">汇融金服首页</a>
+        </div>
     </div>
-</div>
-<div class="login-main">
+</nav>
+<div class="login-main" style="padding-top: 80px;">
     <div class="container">
         <div class="main-top row"><b>新会员注册</b>已有账号，直接<a href="">登录</a>基金公司、证券公司开户请直接联系888 888 888</div>
         <div class="main-middle clearfix">
@@ -57,7 +59,7 @@
                     <div style="display:inline-block;margin-left:20px;width:120px;">同意<a>《注册协议》</a></div>
                     <a href="" class="get ">如何获取邀请码</a>
                 </div>
-                <button type="submit" class="next">下一步</button>
+                <!--<button type="submit" class="next">--><a href="module/views/login/LoginTemp2.html" class="next">下一步</a><!--</button>-->
             </form>
             <div class="advert">
 

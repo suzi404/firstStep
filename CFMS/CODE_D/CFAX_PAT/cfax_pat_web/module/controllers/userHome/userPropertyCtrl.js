@@ -1,4 +1,5 @@
 ﻿app.controller('userPropertyCtrl',['$scope', '$location', function($scope, $location){
+
 	// li切换
 	$scope.color1 = 0;
 	$scope.changeColor1 = function(n){

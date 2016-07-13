@@ -11,5 +11,8 @@ $(function(){
         $(this).parents(".loginBox").find(".loginCont:eq("+i+")").css("display","block");
 
     });
+    var h = $(".user-right-side").height() + 'px';
+        console.log(h);
+        $(".user-left-side").height('905px');
 })
 

@@ -57,5 +57,13 @@ app.controller('menuCtrl',function($scope){
            sIcon.removeClass('sou-hover');
            }
        })
+    $scope.$uesr = $(".top-header-us .user .userPic");
+//    $scope.$hui = $(".assets .assets_ul .hui");
+    $scope.$uesr.on('click',function(e) {
+        e.stopPropagation();
+        $('.top-header-us .user').hide();
+        $('.top-header-us .user_in').show();
+        $('.flag').hide();
+    })
     })
 

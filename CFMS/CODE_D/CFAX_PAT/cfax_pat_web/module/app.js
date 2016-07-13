@@ -3,14 +3,31 @@
  */
 var app = angular.module("app", [
     'ui.router',
-    'tm.pagination'
+    'tm.pagination',
+    'ngLoadingSpinner',
+    'ui.bootstrap'
 ]);
-app.config(function($stateProvider,$urlRouterProvider,$httpProvider){
-    $urlRouterProvider.when('','/index');
+app.config(function($stateProvider,$urlRouterProvider,$httpProvider,usSpinnerConfigProvider){
+    // loading配置
+    usSpinnerConfigProvider.setDefaults({color: '#ff8b3d'});
+
+    $urlRouterProvider.otherwise('/home/index');
     $stateProvider
-        .state('index', {
+        .state('home', {
+            url: '/home',
+            templateUrl: 'module/views/home/homeTemp.html'
+        })
+        .state('home.index', {
             url: '/index',
             templateUrl: 'module/views/index/indexTemp.html'
+        })
+        .state('home.assets', {
+            url: '/assets',
+            templateUrl: 'module/views/assets/assetsTemp.html'
+        })
+        .state('home.product', {
+            url: '/product',
+            templateUrl: 'module/views/product/productTemp.html'
         })
         .state('userHome', {
             url: '/userHome',
@@ -24,23 +41,13 @@ app.config(function($stateProvider,$urlRouterProvider,$httpProvider){
             url:'/userProperty',
             templateUrl:'module/views/userHome/userProperty.html'
         })
-
-
-//    $urlRouterProvider.otherwise({redirectTo: '/'});
-
-        .state('assets', {
-            url: '/assets',
-            templateUrl: 'module/views/assets/assetsTemp.html'
-        })
-        .state('product', {
-            url: '/product',
-            templateUrl: 'module/views/product/productTemp.html'
-        })
-
+        .state('userHome.userManage',{
+                    url:'/userManage',
+                    templateUrl:'module/views/userHome/userManage.html'
+                })
 
 //    $urlRouterProvider.otherwise({redirectTo: '/'});
     $httpProvider.interceptors.push('timestampMarker');
-
 
 })
 //loading

@@ -3,12 +3,12 @@
     @creat:2016-07-08;
 */
 /*=====userHome=====*/
-.user-left-side{width:270px;height:100%;margin-bottom: -10px;float: left;background: #386798;}
-.user-left-side li{width:100%;background: #386798;padding:0 34px 0 32px;height:64px;line-height: 64px;}
+.user-left-side{width:220px;height:100%;margin-bottom: -10px;float: left;background: #386798;position: fixed;}
+.user-left-side li{width:100%;background: #386798;padding:0 30px 0 26px;height:60px;line-height: 60px;}
 .user-left-side li a{background: url('../img/r-arrows.png') no-repeat 100%;color:#fff;width:100%;display: inline-block;}
 .user-right-side{
     width:100%;
-    padding-left: 270px;
+    padding-left: 220px;
     background: #fff;
 }
 .left-side-selected{background: #123656 !important;}
@@ -106,3 +106,33 @@
     height: 16px;
 } 
 /*==========end=============*/
+.user-back{width:39px;padding:0 !important;box-sizing:border-box;height:40px;background: url(../img/r-arrows.png) no-repeat 50% 50%;}
+.user-manage-nav{color:#556a7c;font-size: 16px;height: 40px;line-height: 40px;margin:0 10px;overflow: hidden;white-space: nowrap;}
+.user-manage-nav span{margin:0 10px;}
+.user-head{float: left;padding:30px;overflow: hidden;}
+.user-head img{width: 120px;height:120px;border-radius: 60px;}
+.user-info1{float:left;width:360px;padding-left: 20px;}
+.user-info1 li{overflow: hidden;height:40px;line-height: 40px;}
+.user-info1 li i {color:#999;margin-left:5px;margin-right: 10px;}
+.text{
+    display: inline-block;
+    width: 60px;
+    float: left;
+    text-align: justify;
+    text-align-last: justify;
+    color:#999;
+    line-height: 40px;
+}
+.text:after{
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    content: '';
+    vertical-align: top;
+}
+.user-info2{padding-left:20px;padding-right:18px;margin-left: 180px;width:720px;overflow: hidden;position:relative;height:90px;clear:both;zoom:1;}
+.user-info2 i{color:#999;margin-left:5px;line-height: 40px;}
+.info2-con{position: absolute;width:620px;top:5px;right:0;padding-left: 10px;line-height: 30px;}
+.user-info2 p{line-height: 40px;}
+.user-info2 button{margin-top: 10px;padding:9px 32px;background: #ffd942;color:#9c7d00;font-size: 16px;}

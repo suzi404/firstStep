@@ -1,7 +1,22 @@
-<div ng-controller="userHomeCtrl">
+<nav class="nav nav_index">
+    <div class="top-header">
+        <div class="top-header-us">
+            <div class="logo hidden-xs" ui-sref="home.index"></div>
+            <div class="header_hui_right">
+                <div class="header_hui_title" ui-sref="home.index">融汇金服首页</div>
+                <div class="user user_hui">
+                    <i class="userImg"></i>
+                    <span>会员名有点长</span>
+                    <div class="bor-r"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div ng-controller="userHomeCtrl" style="padding-top: 80px;">
     <div class="user-left-side">
         <ul>
-            <li ng-repeat="item in left_side" ng-class="{'left-side-selected':current_url == item.url}" ng-click="$parent.current_url = item.url">
+            <li ng-repeat="item in left_side" ng-class="{'left-side-selected':current_url == item.url}" ng-click="$parent.current_url = item.url;$parent.current_name = item.name">
                 <a ui-sref="{{item.url}}">{{item.name}}</a>
             </li>
         </ul>
@@ -13,11 +28,10 @@
             <a ui-sref="#">消息中心&nbsp;&nbsp;></a>
         </div>
         <div class="user-container">
-            <div class="user-title"><span>首页</span>&nbsp;>&nbsp;个人中心</div>
+            <div class="user-title"><span>个人中心</span>&nbsp;>&nbsp;{{current_name}}</div>
             <div ui-view></div>
         </div>
         
     </div>
     <div class="clearfix"></div>
 </div>
-
