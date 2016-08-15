@@ -16,24 +16,73 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-xiangxia:before { content: "\e601"; }
-.icon-sousuo:before { content: "\e602"; }
-.icon-yiyue:before { content: "\e603"; }
-.icon-pinglun:before { content: "\e604";}
-.icon-account:before { content: "\e605"; }
-.icon-xiangshang:before { content: "\e606"; }
-.icon-message:before{ content: "\e609";}
-.icon-mobile:before { content: "\e60a"; }
-.icon-passage:before { content: "\e60b"; }
+.icon-helpcenter:before { content: "\e600"; }
+.icon-http:before { content: "\e601"; }
+.icon-about:before { content: "\e602"; }
+.icon-help:before { content: "\e603"; }
+.icon-jigou:before { content: "\e604"; }
+.icon-zichan:before { content: "\e605"; }
+.icon-home:before { content: "\e606"; }
+.icon-asset:before { content: "\e607"; }
+.icon-agency:before { content: "\e608"; }
+.icon-user:before { content: "\e609"; }
+.icon-ma:before { content: "\e60a"; }
+.icon-userManage:before { content: "\e60b"; }
+
+.icon-edit:before { content: "\e60c"; }
+.icon-delete:before { content: "\e60d"; }
+.icon-inquiry:before { content: "\e60e"; }
+.icon-add:before { content: "\e60f"; }
+.icon-question:before { content: "\e610"; }
+.icon-contact:before { content: "\e611"; }
+.icon-pingtaijieshao:before { content: "\e612"; }
+.icon-guide:before { content: "\e613"; }
+.icon-right:before { content: "\e614"; }
+
+/*.icon-xiangxia:before { content: "\e601"; }*/
+/*.icon-sousuo:before { content: "\e602"; }*/
+/*.icon-yiyue:before { content: "\e603"; }*/
+/*.icon-pinglun:before { content: "\e604";}*/
+/*.icon-account:before { content: "\e605"; }*/
+/*.icon-xiangshang:before { content: "\e606"; }*/
+/*.icon-message:before{ content: "\e609";}*/
+/*.icon-mobile:before { content: "\e60a"; }*/
+/*.icon-passage:before { content: "\e60b"; }*/
 
 /*======== fontSize ========*/
-.icon-xiangxia,.icon-xiangshang{font-size:12px; }
-.icon-sousuo{font-size:32px;color:#d2d2d2;cursor: pointer;float: left;line-height:30px;background-color: #f3f3f3;border-top-left-radius: 3px;border-bottom-left-radius: 3px;}
-.icon-sousuoh{font-size:36px;color:#2aabd2;cursor: pointer;}
-.icon-xinxi{font-size:24px;color:#ccc;}
-.icon-message{font-size:36px;color:#ccc;line-height: 40px;}
-.icon-account{ font-size:34px;color:#ccc; }
-.icon-mobile{ font-size:34px;color:#ccc; }
-.icon-passage{ font-size:34px;color:#ccc;}
-.icon-message{font-size:36px;color:#ccc;line-height: 40px;}
-.icon-pinglun{color: #999; }
+
+.icon-helpcenter { font-size:12px;color:#fff; margin-right: 2px;}
+.icon-http { font-size:14px;color:#fff; margin-right: 2px;}
+.icon-about { font-size:16px;color:#fff; margin-right: 2px;}
+.icon-help { font-size:16px;color:#fff; }
+.icon-jigou { font-size:16px;color:#fff; }
+.icon-zichan { font-size:16px;color:#fff; }
+.icon-home { font-size:16px;color:#fff; }
+.icon-asset { font-size:14px;color:#fff; }
+.icon-agency { font-size:19px;color:#fff; }
+.icon-user { font-size:16px;color:#fff; }
+.icon-ma { font-size:12px;color:#fff; }
+.icon-userManage { font-size:16px;color:#fff; }
+
+.icon-edit { font-size:16px; margin: 0px 5px;cursor: pointer;color: #4a8dd3;}
+.icon-delete { font-size:16px; margin: 0px 5px;cursor: pointer;color: #4a8dd3;}
+.icon-inquiry { font-size:16px; }
+.icon-add { font-size:16px; }
+.icon-question { font-size:16px; margin-right: 10px;}
+.icon-contact { font-size:12px; margin-right: 10px;}
+.icon-pingtaijieshao { font-size:15px; margin-right: 10px;}
+.icon-guide { font-size:16px; margin-right: 10px;}
+.icon-right { font-size:14px; float: right;margin-right: 20px;}
+/*.icon-xiangxia,.icon-xiangshang{font-size:12px; }*/
+/*.icon-sousuo{font-size:32px;color:#d2d2d2;cursor: pointer;float: left;line-height:30px;background-color: #f3f3f3;border-top-left-radius: 3px;border-bottom-left-radius: 3px;}*/
+/*.icon-sousuoh{font-size:36px;color:#2aabd2;cursor: pointer;}*/
+/*.icon-xinxi{font-size:24px;color:#ccc;}*/
+/*.icon-message{font-size:36px;color:#ccc;line-height: 40px;}*/
+/*.icon-account{ font-size:34px;color:#ccc; }*/
+/*.icon-mobile{ font-size:34px;color:#ccc; }*/
+/*.icon-passage{ font-size:34px;color:#ccc;}*/
+/*.icon-message{font-size:36px;color:#ccc;line-height: 40px;}*/
+/*.icon-pinglun{color: #999; }*/
+
+
+

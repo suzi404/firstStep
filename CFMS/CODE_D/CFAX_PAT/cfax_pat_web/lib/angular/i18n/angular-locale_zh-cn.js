@@ -3,9 +3,12 @@ angular.module("ngLocale", [], ["$provide", function($provide) {
 var PLURAL_CATEGORY = {ZERO: "zero", ONE: "one", TWO: "two", FEW: "few", MANY: "many", OTHER: "other"};
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
+    "TODAY":"\u4eca\u5929",  
+    "CLEAR":"\u6e05\u7a7a",  
+    "CLOSE":"\u5173\u95ed",
     "AMPMS": [
       "\u4e0a\u5348",
-      "\u4e0b\u5348"
+      "\u4e0b\u5348"        
     ],
     "DAY": [
       "\u661f\u671f\u65e5",

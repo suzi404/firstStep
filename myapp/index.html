@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- <html lang="en" manifest='my.manifest'> -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>angularjsStudy</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.0.0/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesheets/style.css">
+    <link rel="stylesheet" href="css/stylesheets/main.css">
+    <link rel="stylesheet" href="css/css/buttons.css">
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="js/angular.js"></script>
+    <script src="//cdn.bootcss.com/es5-shim/4.5.7/es5-shim.min.js"></script>
+    <script src="//cdn.bootcss.com/es5-shim/4.5.7/es5-sham.min.js"></script>
+    <script src="//cdn.bootcss.com/lodash.js/4.6.1/lodash.min.js"></script>
+    <script src="js/collapse.js"></script>
+    <script src="js/json2.js"></script>
+    <script src="js/angular-animate.js"></script>
+    <script src="js/ngmodel.format.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/angularjs-dropdown-multiselect.js"></script>
+    <script src="js/angular-file-upload.min.js"></script>
+    <script type="text/javascript" src="http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/api.lib.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+    // json格式化
+    var a = {
+        'a': 'aaa',
+        'b': 'bbb'
+    };
+    var b = JSON.stringify(a);
+    var c = JSON.parse(b);
+    // alert(a);
+    // alert(b);
+    // alert(c);
+    // console.log(b);
+    // console.log(c);
+    function status(msg) {
+        // console.log(msg);
+    }
+
+    // 每当在应用程序载入的时候，都会检查该清单文件，
+    // 先触发 checking事件
+    window.applicationCache.onchecking = function() {
+        status("1Checking for a new version.")
+        return false;
+    }
+
+    // 如果清单文件没有改动，同时应用程序也已缓存。
+    // 触发noupdate事件，整个过程结束
+    window.applicationCache.onnoupdate = function() {
+        status("2This version is no-update.");
+        return false;
+    }
+
+    // 如果还未缓存应用程序，或清单文件有改动，那么浏览器会下载缓存清单中的所有资源。
+    // 触发downloading事件，开始下载
+    window.applicationCache.ondownloading = function() {
+        status("3Downloading new version.");
+        window.progresscount = 0; // 下载进度
+        return false;
+    }
+    // console.log(window.applicationCache);
+
+
+    // 当下载完成并且首次将应用程序下载到缓存中，会触发cached事件
+    window.applicationCache.oncached = function() {
+        status("4This application is now cached locally.");
+        return false;
+    }
+
+    // 当下载完成并将缓存中的应用程序更新后，会触发updateready事件
+    // 触发此事件的时候，用户看到的仍是老版本的应用程序
+    window.applicationCache.onupdateready = function() {
+        status("5A new version has been downloaded. Reload to run it.");
+        return false;
+    }
+
+    // 如果浏览器处于离线状态，检查清单列表失败，则会触发error事件
+    // 当一个为缓存的应用程序引入一个不存在的清单文件，也会触发error
+    window.applicationCache.onerror = function() {
+        status("6Couldn't load manifest or cache application.");
+        return false;
+    }
+
+    // 如果一个缓存的应用程序引入一个不存在的文件，会触发obsolete事件
+    // 会将应用从缓存中移除，之后都不会从缓存而是通过网络来加载资源
+    // window.applciationCache.onobsolete = function() {
+    //     status("This applciation is no loger cached.");
+    //     return false;
+    // }
+
+    var a = 1;
+    // indexTest();
+    function indexTest() {
+        console.log(111);
+        console.log(a);
+    }
+    // console.log(a);
+    </script>
+</head>
+<script type="text/javascript">
+// 异步加载微软雅黑字体
+// $youzikuapi.asyncLoad("http://api.youziku.com/webfont/FastJS/yzk_3FADCAE7A7143FDC", function() {
+//     $youziku.load("#ng-app", "833aae0c562645da86f2a4f29ee0e3b1", "Microsoft_YaHei");
+//     $youziku.draw();
+// })
+</script>
+
+<body ng-app="app">
+    <div style="height:100%;" ui-view=""></div>
+    <div class="footer">
+        <p>吃</p>
+        <p>水</p>
+        <p>不</p>
+        <p>忘</p>
+        <p>挖</p>
+        <p>井</p>
+        <p>人</p>
+    </div>
+</body>
+<script src="js/mainCtrl.js"></script>
+<script src="js/controller/angular/testCtrl.js"></script>
+<script src="js/controller/angular/mulSelectCtrl.js"></script>
+<script src="js/controller/angular/uploadCtrl.js"></script>
+<script src="js/controller/js/jsStrCtrl.js"></script>
+<script src="js/controller/js/jsObjCtrl.js"></script>
+<script src="js/controller/js/jsBasisCtrl.js"></script>
+<script src="js/controller/js/xssCtrl.js"></script>
+
+</html>
