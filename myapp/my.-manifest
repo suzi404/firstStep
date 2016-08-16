@@ -1,0 +1,12 @@
+CACHE MANIFEST
+#manifest Version 1 
+CACHE:  
+    images/delete.png 
+    css/stylesheets/style.css
+    css/stylesheets/main.css
+    css/css/buttons.css
+NETWORK:  
+  *
+
+FALLBACK:  
+    
