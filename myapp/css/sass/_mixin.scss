@@ -1,0 +1,10 @@
+// 定义函数
+@mixin col(){
+    width:100px;
+    @media(min-width:500px){
+        width:200px;
+    }
+    @media(min-width:600px){
+        width:300px;
+    }
+}

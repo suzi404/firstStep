@@ -1,0 +1,48 @@
+<div ng-controller="testCtrl" id="main">
+    <h1>测试</h1>
+    <hr>
+    <p>金额负值过滤产生括号222：{{testSum | currency}}</p>
+    <hr>
+    <p>自动时钟：{{clock}}</p>
+    <p>自动时钟2：{{clock2.now}}</p>
+    <hr>
+    <h3>h5自带的ng-maxlength='10'</h3>
+    <input type="text" maxlength="10" ng-model="testValue.v" ng-maxlength="10" value="{{testValue.v}}" required model-format="currency">{{testValue.v}}
+    <br>
+    <input type="text" maxlength="10" ng-model="Value" ng-change="compare()" ng-maxlength="10" value="{{Value}}" required>
+    <hr>
+    <br>
+    <a href="" ng-blur="blur()">link</a>
+    <div ng-show="1">测试：<input type="text" ng-blur="blur()" ng-model="test"/>内层：{{test}}</div>外层：{{test}}<br>
+    <select ng-blur="blur()">
+        <option>----</option>
+        <option>jacky</option>
+        <option>rose</option>
+    </select>
+    <input type="text" ng-model="text" style="border:1px solid #000" />
+    <div style="border:1px solid #000;height:20px;min-width:100px;">{{text | currencyChs}}</div>
+    <hr>
+    <form name="myForm" novalidate>
+        <input name="userName" type="text" ng-model="user.userName" required style="border:1px solid #000" />{{user.userName}}
+        <br>
+        <input name="password" type="password" ng-model="user.password" required style="border:1px solid #000" />
+        <table>
+            <tr>
+                <td>这是表格</td>
+                <td><div>这是表格</div></td>
+            </tr>
+            <tr>
+                <td>这是表格这是表格</td>
+                <td>这是表格</td>
+            </tr>
+            <tr>
+                <td>这是表格</td>
+                <td>这是表格</td>
+            </tr>
+        </table>
+        <input type="submit" ng-disabled="myForm.$invalid" ng-click="save()"/>
+    </form>
+    <br>
+    <button ng-click="hello()">hello</button>
+    <button ng-click="hello1()">hello1</button>
+</div>

@@ -1,0 +1,38 @@
+﻿<div id="container">
+    <h1>css_down</h1>
+    <a href="./images/g1.jpg">下载</a>
+    <br>
+    <a href="./images/g1.jpg" download="girl">下载</a>
+    <br>
+    <p>download属性，ie不支持。。。</p>
+    <hr>
+    <h1>direction</h1>
+    <p ng-class="{true:'rl',false:'lr'}[change]">
+        <button>确定</button>
+        <button>取消</button>
+        <br>
+        <a href="javascript:" class="btn">确定</a> <a href="javascript:" class="btn">取消</a>
+    </p>
+    <button ng-click="change = !change">调换顺序</button>
+    <br>
+    <br>
+    <p class="rl"><img src="./images/g1.jpg" usemap="#myMap"> <img src="./images/g2.jpg"></p>{{obj}}
+    <map name="myMap" id="myMap" style="cursor:pointer;">
+        <area shape="rect" coords="0,0,100,100" ng-click="obj='111'" alt="" >
+        <area shape="rect" coords="100,100,150,150" ng-click="obj='222'" alt="">
+    </map>
+    <p class="rl"><span>span1</span> <span>span2</span></p>
+    <hr>
+    <h1>文字两端对齐</h1>
+    <h3>
+        text-align:justify;<br>
+        text-justify:distribute;/*兼容ie*/
+    </h3>
+    <p class="justify">
+        hello word; 为了最大化组件的品质，组件的实现要讲求分工； <br>要想分工，需要将组件UI层东西从JS剥离出来，发挥CSS/HTML工程师的在UI处理上造诣； 想要剥离，就要求组件半封装，避开大而全的API； 所谓半封装是功能封装，UI不封装；但对于某一具体项目，组件还是完全封装的； 避开API的方法包括交给原生的HTML属性API, 以及根据项目UI场景设计API，告别无意义的生僻场景API的使用。 发挥CSS的潜力，尽量避免使用JS做一些自己为是的功能； UI组件的本质是HTML和CSS, JS只是辅助，千万不要乱了主次。
+    </p>
+    <p class="justify">
+        This is the underlying implementation for all the other mixins in this module. It is the only way to access prefix support for older versions of the spec.$properties: map of property-value pairs that should be prefixed `$version1: the version of the spec to use when considering what prefix to appply. Defaults to the most recent (spec version 3). Only the most recent version of the spec outputs an unprefixed version.
+    </p>
+
+</div>

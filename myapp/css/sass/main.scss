@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+/**
+ * 导入文件
+ * mixin...............函数文件
+ * var.................变量文件
+ * 
+ */
+@import "mixin",
+"var","compass/css3","compass/typography";
+@import "normalize";
+/*导入文件按钮样式库*/
+// @debug browsers();
+
+$browser-minimum-versions:("ie":"8");
+
+a{
+    @include unstyled-link();
+    @include hover-link();
+    // @include link-colors(#aaa,#bbb,#ccc,#ddd,#eee);
+}
+.sec{
+    width:100px;
+    height:100px;
+    border:1px solid #4D5559;
+}
+.content {
+    padding: 8px 10px;
+    width: $w;
+    border: $bor;
+    @include opacity(.4);
+}
+
+.content-focus {
+    border-color: #4D5559;
+    @include box-shadow(8px 8px 0px 0px rgba(0, 0, 0, 0.4));
+}
+
+textarea {
+    border: none;
+    &:focus {
+        border: none;
+        outline: none !important;
+        box-shadow: none;
+    }
+}
+
+.content2 {
+    @extend .content;
+    margin-top: 10px;
+}
+
+.test1 {
+    @extend .content-focus;
+}
+
+.test1 .test2 {
+    @include col;
+    height: 50px;
+    background: red;
+}
+
+// 占位符
+%mr10{margin-right:10px;}
+.main-a{
+    @extend %mr10;
+}
+
+//函数的声明和调用
+@mixin myMargin($t:20px,$r:25px,$b:20px,$l:25px){
+    margin:$t $r $b $l,
+}
+
+.test{
+    @include myMargin();
+}
+.test1{
+    @include myMargin(10px,20px,30px,40px);
+}
+.test2{
+    @include myMargin(10px,20px);
+}
+/* animation */
+.anima-div{
+    width:100px;
+    height:100px;
+    position:relative;
+    background:red;
+    @include animation(mymove 3s infinite);
+    @include animation-direction(alternate);
+}
+@include keyframes(mymove){
+    from{top:0;left:0px;}
+    to{top:0;left:200px;}
+}
+/* Appearance */
+.appearance-div{
+    @extend .sec;
+    @include appearance('button');
+}
+
+/* background-size */
+.background-div{
+    @extend .sec;
+    background:url(../../images/Jellyfish.jpg) no-repeat;
+    @include background-size(50%,50%);
+}
+
+/* background-size */
+.radius-div{
+    @extend .sec;
+    @include border-radius;
+}
+
+.justify{
+    width:250px;
+    border:1px solid #4D5559;
+    float:left;
+    margin-left:20px;
+    // letter-spacing: -0.15em;
+    text-align:justify;
+    text-justify:distribute;/*兼容ie*/
+    // @include justify-content(center);
+}
