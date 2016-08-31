@@ -1,0 +1,33 @@
+<div ng-controller="datepickerCtrl">
+   <pre class="">选定的日期是：<em>{{aaa | date:'fullDate'}}</em></pre> 
+    <section style="display:inline-block; min-height:240px;">
+                <datepicker ng-model="aaa" min-date="minDate" show-weeks="true" class="wellwell-sm"></datepicker>
+            </section> 
+        <div class="row">
+            <div class="col-md-6">
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="aaa" is-open="opened" min-date="minDate"  datepicker-options="{{dateOptions}}" date-disabled = "disabled(date,mode)" ng-required="true" close-text="Close">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="">格式：</label>
+                <select name="" id="" class="form-control" ng-model="format" ng-options="f for f in formats"><option value=""></option></select> 
+            </div>
+        </div>
+        <hr>
+        <div>
+            <button type="button" class="btn btn-info btn-sm" ng-click="today()">今天</button> 
+            <button type="button" class="btn btn-sm btn-default" ng-click="dt = '2008-08-08'">2008-08-08</button>
+            <button type="button" class="btn btn-sm btn-danger" ng-click="clear()" >清除</button>
+            <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" tooltip="After today">闵日期</button>
+
+        </div>
+</div>
+

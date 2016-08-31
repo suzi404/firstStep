@@ -1,0 +1,45 @@
+﻿<style>
+    .mask{
+        width:100%;
+        height:100%;
+        position: fixed;
+        top:0;
+        left:0;
+        background: #000000;
+        filter: alpha(Opacity=30);
+        -moz-opacity:0.30;
+        opacity:0.30;
+        z-index: 9999;
+    }
+    .kuang{
+        width:200px;
+        height:200px;
+        position: absolute;
+        left:50%;
+        top:50%;
+        margin-top: -100px;
+        margin-left: -100px;
+        background-color:#fff;
+        z-index: 400;
+        line-height: 200px;
+        text-align: center;
+    }
+</style>
+<div>
+    <button class="btn btn-query" ng-click="show = 1">开启遮罩层</button>
+</div>
+<hr>
+<pre>
+    1、当父级没有z-index时，子级z-index再大，也无法遮住跟父级同级的左侧列表
+</pre>
+<div>
+    .....
+    <div class="mask" ng-show="show">
+        <form>
+            ....
+            <div class="kuang">
+                <button class="btn btn-query" ng-click="show = 0">关闭遮罩层</button>
+            </div>
+        </form>
+    </div>
+</div>

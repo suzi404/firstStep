@@ -1,3 +1,0 @@
-hello company_computer,i'm home_computer¡£
-
-hello company_computer.yes,it's me too;

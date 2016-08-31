@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngAnimate", "ui.router", "angularFileUpload" ,'angularjs-dropdown-multiselect','mgcrea.ngStrap.collapse','ngmodel.format']).config(function($stateProvider, $urlRouterProvider ,$collapseProvider) {
+var app = angular.module("app", ["ngAnimate", "ui.router", "angularFileUpload" ,'angularjs-dropdown-multiselect','mgcrea.ngStrap.collapse','ngmodel.format','ui.bootstrap']).config(function($stateProvider, $urlRouterProvider ,$collapseProvider,$httpProvider) {
 
     angular.extend($collapseProvider.defaults, {
         animation: 'am-flip-x'
@@ -7,21 +7,25 @@ var app = angular.module("app", ["ngAnimate", "ui.router", "angularFileUpload" ,
 
     $stateProvider
     .state("main", { url: "/main", templateUrl: "main.html" })
-    .state("main.jsStr", { url: "/jsStr", templateUrl: "html/js/jsStr.html" })
-    .state("main.jsBasis", { url: "/jsBasis", templateUrl: "html/js/jsBasis.html" })
-    .state("main.jsObj", { url: "/jsObj", templateUrl: "html/js/jsObj.html" })
-    .state("main.xss", { url: "/xss", templateUrl: "html/js/xss.html" })
+    .state("main.jsStr", { url: "/jsStr", templateUrl: "view/js/jsStr.html" })
+    .state("main.jsBasis", { url: "/jsBasis", templateUrl: "view/js/jsBasis.html" })
+    .state("main.jsObj", { url: "/jsObj", templateUrl: "view/js/jsObj.html" })
+    .state("main.xss", { url: "/xss", templateUrl: "view/js/xss.html" })
 
-    .state("main.test", { url: "/test", templateUrl: "html/angular/test.html" })
-    .state("main.upload", { url: "/upload", templateUrl: "html/angular/upload.html" })
-    .state("main.mulSelect", { url: "/mulSelect", templateUrl: "html/angular/mulSelect.html" })
+    .state("main.test", { url: "/test", templateUrl: "view/angular/test.html" })
+    .state("main.upload", { url: "/upload", templateUrl: "view/angular/upload.html" })
+    .state("main.mulSelect", { url: "/mulSelect", templateUrl: "view/angular/mulSelect.html" })
+    .state("main.datepicker", { url: "/datepicker", templateUrl: "view/angular/datepicker.html" })
 
-    .state("main.css1", { url: "/css1", templateUrl: "html/css/css1.html" })
-    .state("main.css_relative", { url: "/css_relative", templateUrl: "html/css/css_relative.html" })
-    .state("main.css_down", { url: "/css_down", templateUrl: "html/css/css_down.html" })
-    .state("main.css3", { url: "/css3", templateUrl: "html/css/css3.html" })
+    .state("main.css1", { url: "/css1", templateUrl: "view/css/css1.html" })
+    .state("main.css_relative", { url: "/css_relative", templateUrl: "view/css/css_relative.html" })
+    .state("main.css_down", { url: "/css_down", templateUrl: "view/css/css_down.html" })
+    .state("main.css3", { url: "/css3", templateUrl: "view/css/css3.html" })
+    .state("main.css2", { url: "/css2", templateUrl: "view/css/css2.html" })
 
+    // $httpProvider.interceptors.push('httpInterceptor');
 });
+
 
 app.filter('currencyChs', function() {
     return function(value) {
@@ -134,4 +138,192 @@ app.filter('currencyChs', function() {
         return C.numstr;
     }
 
+});
+app.factory('myalert',function(){
+    function createMessTipWin(param) {
+
+        if (!param) {
+            param = {
+                funcOk:function () {
+                },
+                funcNo:function () {
+                }
+            }
+        }
+
+        var tipWinObj = document.createElement("DIV");
+        tipWinObj.id = 'ssss';
+        tipWinObj.style.cssText = "position:fixed;z-index:9999;width:300px; height:auto; overflow:hidden;background-color:white; border:solid 1px #231234;padding-bottom:10px;";
+        tipWinObj.style.top = '30%';
+        tipWinObj.style.left = '40%';
+
+        var topDiv = document.createElement("DIV");
+        topDiv.style.cssText = "height;30px; line-height:30px; font-size:14px;background-color:#231234;color:white;";
+
+        var titDiv = document.createElement("DIV");
+        titDiv.style.cssText = "float:left; width:80%;margin-left:5px;";
+        titDiv.innerHTML = param.title;
+
+        var cross = document.createElement("DIV");
+        cross.style.cssText = "float:right; cursor:pointer;margin-right:5px;";
+        cross.innerHTML = 'X';
+
+        var clearDiv = document.createElement("DIV");
+        clearDiv.style.cssText = "clear:both";
+
+        var contentDiv = document.createElement("DIV");
+        contentDiv.style.cssText = "height:auto; overflow:hidden; line-height:24px;padding:0px 10px 10px;text-align:center;margin-top:10px;";
+        contentDiv.innerHTML = param.tips;
+
+        var okBtn = document.createElement("BUTTON");
+        okBtn.style.cssText = "float:right; width:50px; margin-right:10px;cursor:pointer ";
+        okBtn.innerHTML = param.btnOk;
+
+        var noBtn = document.createElement("BUTTON");
+        noBtn.style.cssText = "float:right; width:50px;cursor:pointer;margin-right: 10px;";
+        noBtn.innerHTML = param.btnNo;
+
+        topDiv.appendChild(cross);
+        topDiv.appendChild(clearDiv);
+        tipWinObj.appendChild(topDiv);
+        tipWinObj.appendChild(contentDiv);
+        tipWinObj.appendChild(noBtn);
+        tipWinObj.appendChild(okBtn);
+
+        //获取当前页面的第一个body节点对象,
+        var body = document.getElementsByTagName("BODY")[0];
+        body.appendChild(tipWinObj);
+
+        //鎖屏DIV
+        var bgObj = document.createElement("DIV");
+        bgObj.style.cssText = "position:fixed;z-index: 9997;top: 0px;left: 0px;background: #000000;filter: alpha(Opacity=30); -moz-opacity:0.30;opacity:0.30;";
+        bgObj.style.width = '100%';
+        bgObj.style.height = '120%';
+        body.appendChild(bgObj);
+
+        cross.onclick = function () {
+            body.removeChild(tipWinObj);
+            body.removeChild(bgObj);
+        };
+        okBtn.onclick = function () {
+            param.funcOk();
+            body.removeChild(tipWinObj);
+            body.removeChild(bgObj);
+        };
+        noBtn.onclick = function () {
+            param.funcNo();
+            body.removeChild(tipWinObj);
+            body.removeChild(bgObj);
+        };
+    };
+    return{
+        getAlert:function(n){
+            createMessTipWin(n);
+        }
+    }
+
+})
+
+// session过期拦截
+var times = 0;
+app.factory('httpInterceptor', function($q, $injector, $location,myalert) {
+    var httpInterceptor = {
+        'responseError': function(response) {
+            if (response.status == 401) {
+                $location.path('/home/loginIn');
+                return $q.reject(response);
+            } else if (response.status === 404) {
+                return $q.reject(response);
+            }
+        },
+        'response': function(response) {
+            var param = {
+                        title:'提示',
+                        tips:"你点点试试！",
+                        btnOk:'是',
+                        btnNo:'否',
+                        funcOk:function () {
+                            alert('真2')
+                        },
+                        funcNo:function () {
+                            alert(2)
+                        }
+                    }
+                    // createMessTipWin(param);
+            myalert.getAlert(param)
+            // if (response.config.url.indexOf(".do") > 0 && response.data.errorCode === 'PLT0013') {
+            //     // console.log(response);
+            //     if (times) return;
+            //     $cookieStore.remove("pat_memberNo");
+            //     alert("登录超时，请重新登录！");
+            //     $location.path('/home/loginIn');
+            //     times++;
+            //     return $q.reject(response);
+            // }
+
+            return response;
+        }
+    }
+    return httpInterceptor;
+});
+    // var param = {
+    //             title:'提示',
+    //             tips:"你点点试试！",
+    //             btnOk:'是',
+    //             btnNo:'否',
+    //             funcOk:function () {
+    //                 alert('真2')
+    //             },
+    //             funcNo:function () {
+    //                 alert(2)
+    //             }
+    //         }
+    //         createMessTipWin(param);
+    /**
+     * by nacky.long
+     * 创建自定义弹窗
+     * @param param
+     * 参数结构：
+     param = {
+                title:'提示',
+                tips:"没有任何提示信息！",
+                btnOk:'是',
+                btnNo:'否',
+                funcOk:function () {
+                },
+                funcNo:function () {
+                }
+            }
+     */
+    
+app.directive('inputLimit',function(){
+    return{
+        restrict: 'AE', 
+        link:function(scope, elem, attrs){
+            elem.bind('click',function(){
+                // var v = attr.innerHTML;
+                alert(222);
+            })
+        }
+    }
+});
+
+
+app.directive('helloWorld', function() {
+  return {
+    restrict: 'AE',
+    replace: true,
+    template: '<p style="background-color:{{color}}">Hello World',
+    link: function(scope, elem, attrs) {
+      elem.bind('click', function() {
+        elem.css('background-color', 'white');
+        scope.$apply(function() {
+          scope.color = "white";
+        });
+      });
+      elem.bind('mouseover', function() {
+        elem.css('cursor', 'pointer');
+      });
+    }
+  };
 });

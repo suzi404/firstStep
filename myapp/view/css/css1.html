@@ -1,0 +1,81 @@
+﻿<style>
+    #container {
+        width: 400px;
+        height: 200px;
+        display: table
+    }
+    #left, #mid, #right {
+        display: table-cell;
+        background: #ccc;
+        outline: 2px dashed blue
+    }
+    #mid {
+        width: 100%;
+        background: #f0f;
+        
+    }
+
+    #left,#right {
+        padding-left:15px;
+        padding-right:15px;
+        white-space:nowrap;
+    }
+    .con{float:left;}
+    .con1{display:inline-block;width:100px;background: red;}
+    .con2{display:inline-block;width:200px;background: blue;}
+    .fl1{float:left;width:100px;background: red;}
+    .fl2{float:left;width:200px;background: blue;}
+    .expandingArea{position: relative;}
+    .expandingArea textarea{
+        position:absolute;
+        top:0;
+        left:0;
+        height:100%;
+        border:1px solid #ccc;
+        width:200px;
+        overflow-y:hidden; 
+    }
+    .expandingArea pre{
+        display:block;
+        visibility:hidden;
+        width:200px;
+    }
+</style>
+<!--[if lt IE 9]>
+             <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+             <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+           <![endif]-->
+<div id="container">
+
+    <div id="left" inputLimit>左边</div>
+    <div id="mid">
+        <select name="" id="" style="width:100%">
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+        </select>
+    </div>
+    
+    <div id="right">右边</div>
+</div>
+<div id="container">
+    <div id="left">左边</div>
+    <div id="mid"><input type="text" style="width:100%" value="我是自动扩展的，但不会破坏父容器的宽度。除了左边和右边占用的宽度后，剩下的宽度就是我的了。" /></div>
+    <div id="right">右边</div>
+</div><br>
+<div>email：<input type="email" pattern="[^ @]*@[^ @]*" value=""></div>
+
+<div class="con">
+    <div class="con1">display:inline-block;width:100px;</div>
+    <div class="con2">display:inline-block;width:200px;</div>
+</div>
+<div class="con">
+    <div class="fl1">display:inline-block;width:100px;</div>
+    <div class="fl2">display:inline-block;width:200px;</div>
+</div>
+<hr style="clear:both;ovflow:hidden;">
+<pre>高度自适应的textarea。参见 https://segmentfault.com/q/1010000000095238</pre>
+<div class="expandingArea ">
+    <pre>{{text}}<br></pre>
+    <textarea placeholder="输入文字" ng-model="text"></textarea>
+</div>
