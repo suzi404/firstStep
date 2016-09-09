@@ -17,7 +17,7 @@ angular.module('app').controller('testCtrl', ['$rootScope', '$scope', '$http','$
 
         $scope.Value = '000';
     }
-
+    $scope.formValue = {};
     $scope.testSum = '-222222.33';
     $scope.testValue = { v: '1234567890111111111' };
     $scope.Value = '232312222222222222222222222';
@@ -51,18 +51,25 @@ angular.module('app').controller('testCtrl', ['$rootScope', '$scope', '$http','$
         'password': ''
     };
     $scope.save = function() {
+
         $http({
-            url: '/angularjsStudy/data/test.json',
+            // timeout:6000,
+            url: 'data/test.json',
             method: 'GET'
         }).success(function(data) {
             //响应成功
-            alert(data);
+            console.log('返回数据：'+data);
         }).error(function(data) {
+            console.log('请求失败');
             //处理响应失败
         });
     }
 
+    $scope.save();
+    console.log(111);
     // 不用提前定义，加上$scope前缀就是控制器内的全局变量
+    // $scope.test24;
+    test824();
     function test824(){
         $scope.test24 = 11;
     }
@@ -134,8 +141,16 @@ angular.module('app').controller('testCtrl', ['$rootScope', '$scope', '$http','$
     var updateClock2 = function(){
         $scope.clock2.now = new Date();
     }
-    setInterval(function(){
+    var t = 0;
+    var c = setInterval(function(){
         $scope.$apply(updateClock2);
+        t ++ ;
+        // 10s后自动停止
+        if(t == 10)clearInterval(c);
     },1000);
     updateClock2();
+    
+
+
+
 }]);

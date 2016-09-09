@@ -1,0 +1,11 @@
+	
+	<h1>多步表单2</h1>
+    姓名：<input type="text" ng-model="formValue.name">
+    <a class="btn" ui-sref="main.stepsForm1">上一步</a>
+    <button class="btn" ng-click="submit()">提交</button>
+    <hr>
+    <div>公司:{{formValue.company}}</div>
+    <div>姓名:{{formValue.name}}</div>
+    <pre>
+        原理其实就是共用一个控制器，都写在父级mainctrl里，而且main的控制器要在app.js里定义，而不是写在main.html里
+    </pre>

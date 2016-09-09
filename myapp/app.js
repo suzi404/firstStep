@@ -6,16 +6,18 @@ var app = angular.module("app", ["ngAnimate", "ui.router", "angularFileUpload" ,
     $urlRouterProvider.otherwise("/main");
 
     $stateProvider
-    .state("main", { url: "/main", templateUrl: "main.html" })
-    .state("main.jsStr", { url: "/jsStr", templateUrl: "view/js/jsStr.html" })
-    .state("main.jsBasis", { url: "/jsBasis", templateUrl: "view/js/jsBasis.html" })
-    .state("main.jsObj", { url: "/jsObj", templateUrl: "view/js/jsObj.html" })
-    .state("main.xss", { url: "/xss", templateUrl: "view/js/xss.html" })
-
     .state("main.test", { url: "/test", templateUrl: "view/angular/test.html" })
     .state("main.upload", { url: "/upload", templateUrl: "view/angular/upload.html" })
     .state("main.mulSelect", { url: "/mulSelect", templateUrl: "view/angular/mulSelect.html" })
     .state("main.datepicker", { url: "/datepicker", templateUrl: "view/angular/datepicker.html" })
+    .state("main.stepsForm1", { url: "/stepsForm1", templateUrl: "view/angular/stepsForm1.html", controller: "stepsForm1Ctrl" })
+    .state("main.stepsForm2", { url: "/stepsForm2", templateUrl: "view/angular/stepsForm2.html", controller: "stepsForm2Ctrl" })
+
+    .state("main", { url: "/main", templateUrl: "main.html", controller: "mainCtrl"})
+    .state("main.jsStr", { url: "/jsStr", templateUrl: "view/js/jsStr.html" })
+    .state("main.jsBasis", { url: "/jsBasis", templateUrl: "view/js/jsBasis.html" })
+    .state("main.jsObj", { url: "/jsObj", templateUrl: "view/js/jsObj.html" })
+    .state("main.xss", { url: "/xss", templateUrl: "view/js/xss.html" })
 
     .state("main.css1", { url: "/css1", templateUrl: "view/css/css1.html" })
     .state("main.css_relative", { url: "/css_relative", templateUrl: "view/css/css_relative.html" })

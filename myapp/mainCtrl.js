@@ -7,6 +7,8 @@ angular.module('app').controller('mainCtrl', ['$rootScope', '$scope','$anchorScr
         "title": "angular",
         "body": [
             { 'name': '测试', 'url': 'main.test' },
+            { 'name': '多步表单1', 'url': 'main.stepsForm1' },
+            { 'name': '多步表单2', 'url': 'main.stepsForm2' },
             { 'name': '文件上传', 'url': 'main.upload' },
             { 'name': '多选下拉框', 'url': 'main.mulSelect' },
             { 'name': '时间控件', 'url': 'main.datepicker' }
@@ -35,9 +37,22 @@ angular.module('app').controller('mainCtrl', ['$rootScope', '$scope','$anchorScr
         $state.go(x);
         // anchorFun();
     }
+
     // function anchorFun(){
     //     $location.hash('main');
     //     $anchorScroll();
     //     $location.hash('');
     // }
+
+    // 多步表单提交
+    $scope.formValue = {};
+    $scope.submit = function(){
+        var str = $scope.formValue.company + '--' + $scope.formValue.name;
+        alert(str);
+    }
+
+    // 监控url变换
+    $scope.$on('$locationChangeSuccess',function(e,newUrl,oldUrl){
+        // console.log(newUrl + '\n' + oldUrl);
+    })
 }]);

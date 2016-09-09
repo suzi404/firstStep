@@ -10,8 +10,11 @@ angular.module('app').controller('jsObjCtrl', ['$rootScope', '$scope', '$filter'
     var data = '12.33';
     var data2 = '0.30';
     function dataChange(data){
+        // return data;
         if(!data) return;
-        data = $filter('currency')(data,'').replace(/,/g,'');
+        data = data.replace(/,/g,'');
+        data = $filter('currency')(data,'');
+        data = data.replace(/,/g,'');
         var arr = data.split(".");
         var n = 10 - arr[0].length;
         for(var i=0; i<n; i++){
@@ -26,7 +29,7 @@ angular.module('app').controller('jsObjCtrl', ['$rootScope', '$scope', '$filter'
     console.log(dataChange('22.30'));//000000002230
     console.log(dataChange('22.3'));//000000002230
     console.log(dataChange('22.300002'));//000000002230
-    console.log(dataChange('2312312322.0033'));//000000002230
+    console.log(dataChange('223,423,333.01'));//000000002230
     return;
     /**
      * indexOf，判断值在数组和字符串中的位置

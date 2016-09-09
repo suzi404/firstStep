@@ -24,8 +24,6 @@ angular.module('app').controller('jsBasisCtrl', ['$rootScope', '$scope',  functi
      * array、object、null、function  new 引用类型
      */
     // cate();
-    
-    
     function cate(){
         //值类型判断很简单，typeof
         console.log('值类型判断：');
@@ -69,5 +67,51 @@ angular.module('app').controller('jsBasisCtrl', ['$rootScope', '$scope',  functi
         console.log(Array.isArray(j));
 
     }
+
+    // timeout演示结果
+    var timestamp = new Date().getTime(); 
+    console.log(timestamp);
+
+    var count = 0;
+    setInterval(function(){
+        count ++;
+    },1000)
     
+    setTimeout(function(){
+        var timestamp = new Date().getTime(); 
+        console.log(timestamp);
+        console.log(count);
+    },1000);
+
+    $scope.print1 = function(){
+        var a = 0;
+        for(var i=0; i<10000000; i++){
+            if(a){
+                if(i){
+                  a ++;  
+                }
+            }
+        }
+        console.log(a);
+    }
+    function print2(){
+        console.log(222);
+    }
+    $scope.print1();
+    print2();
+
+    // 获取时间戳精确到秒
+    var timestamp = Date.parse(new Date()); 
+    // console.log(timestamp);
+    var unixTimestamp = new Date(timestamp); 
+    // console.log(unixTimestamp);
+    // console.log("普通时间为："+unixTimestamp.toLocaleString());
+    // 精确到毫秒
+    var timestamp = new Date().getTime(); 
+    // console.log(timestamp);
+
+    //正则匹配
+    var reg = new RegExp("\\d{5}","g");//匹配全局模式下的5个数字
+    
+
 }]);
