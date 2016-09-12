@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('app').controller('testCtrl', ['$rootScope', '$scope', '$http','$timeout', function($rootScope, $scope, $http, $timeout) {
+angular.module('app').controller('testCtrl', function($rootScope, $scope, $http, $timeout, $q, publicSer) {
     $scope.obj = {
         a: 1,
         b: 2
@@ -151,6 +151,53 @@ angular.module('app').controller('testCtrl', ['$rootScope', '$scope', '$http','$
     updateClock2();
     
 
+    function asyncGreet(name) {  
+      var deferred = $q.defer();  
+       
+      setTimeout(function() {  
+        // 因为此function 在未来的事件循环中异步执行,  
+        // 我们需要把代码包装到到一个 $apply 调用中,以便正确的观察到 model 的改变  
+        $scope.$apply(function() {  
+          deferred.notify('即将问候 ' + name + '.');  
+       
+          if (okToGreet(name)) {  
+            deferred.resolve('你好, ' + name + '!');  
+          } else {  
+            deferred.reject('拒绝问候 ' + name + ' .');  
+          }  
+        });  
+      }, 1000);  
+       
+      return deferred.promise;  
+    }  
+       
+    // var promise = asyncGreet('小漠漠');  
+    // promise.then(function(greeting) {  
+    //   alert('成功: ' + greeting);  
+    // }, function(reason) {  
+    //   alert('失败鸟: ' + reason);  
+    // }, function(update) {  
+    //   alert('收到通知: ' + update);  
+    // });
 
+    function okToGreet(n){
+        var res = n ? true : false;
+        return res;
+    }
 
-}]);
+    $scope.show = true;
+    $scope.getData = function(){
+        // 异步请求promise
+        publicSer.getData().then(function(res){
+            $scope.datas = res;
+            console.log($scope.datas);
+        },function(err){
+            console.log(err);
+        },function(progress){
+            $scope.progress = progress;
+            $scope.show = false;
+        })
+    }
+    
+
+});

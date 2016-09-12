@@ -114,4 +114,14 @@ angular.module('app').controller('jsBasisCtrl', ['$rootScope', '$scope',  functi
     var reg = new RegExp("\\d{5}","g");//匹配全局模式下的5个数字
     
 
+    // 制作假json数据
+    function getFakeJson(){
+        var str = '{"data":[';
+        for(var i=0; i < 1000; i++){
+            str += '{"name":"'+i+'aaaaa","value":"'+i+'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},'
+        }   
+        str += ']}'
+        return str;
+    }
+   // console.log(getFakeJson());
 }]);
